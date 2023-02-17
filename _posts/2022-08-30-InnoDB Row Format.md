@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "InnoDB-Row Format"
-date: 2022-10-17 16:03:15 +0800
+date: 2022-08-30 16:03:15 +0800
 categories: 计算机 MySQL
 math: false
 typora-root-url: ..

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C++ memory order"
-date: 2022-9-20 16:03:15 +0800
+date: 2022-10-17 16:03:15 +0800
 categories: 计算机 C++
 math: false
 typora-root-url: ..
