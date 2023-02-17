@@ -1,0 +1,133 @@
+<!DOCTYPE html><html lang="zh-CN" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="day-prompt" content="天前"><meta name="hour-prompt" content="小时前"><meta name="minute-prompt" content="分钟前"><meta name="justnow-prompt" content="刚刚"><meta name="generator" content="Jekyll v4.2.1" /><meta property="og:title" content="算法导论" /><meta property="og:locale" content="zh_CN" /><meta name="description" content="算法导论" /><meta property="og:description" content="算法导论" /><link rel="canonical" href="/posts/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/" /><meta property="og:url" content="/posts/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/" /><meta property="og:site_name" content="VCisHere" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2022-06-13T22:01:21+08:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="算法导论" /><meta name="google-site-verification" content="google_meta_tag_verification" /> <script type="application/ld+json"> {"headline":"算法导论","dateModified":"2022-06-13T22:01:21+08:00","datePublished":"2022-06-13T22:01:21+08:00","description":"算法导论","url":"/posts/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/"},"@type":"BlogPosting","@context":"https://schema.org"}</script><title>算法导论 | VCisHere</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="VCisHere"><meta name="application-name" content="VCisHere"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column align-items-end" lang="zh-CN"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" alt="avatar" class="mx-auto"> <img src="/assets/img/avatar.jpg" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">VCisHere</a></div><div class="site-subtitle font-italic">(°ー°〃)</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>首页</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>分类</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>标签</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>归档</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>关于</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <a href="https://github.com/VCisHere" aria-label="github" class="order-3" target="_blank" rel="noopener" > <i class="fab fa-github"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['vcishere01','gmail.com'].join('@')" aria-label="email" class="order-4" > <i class="fas fa-envelope"></i> </a> <span class="icon-border order-2"></span> <span id="mode-toggle-wrapper" class="order-1"> <i class="mode-toggle fas fa-adjust"></i> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } var self = this; /* always follow the system prefers */ this.sysDarkPrefers.addListener(function() { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.updateMermaid(); }); } /* constructor() */ setDark() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_KEY); sessionStorage.removeItem(ModeToggle.MODE_KEY); } get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode == ModeToggle.DARK_MODE; } get isLightMode() { return this.mode == ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer) ) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } updateMermaid() { if (typeof mermaid !== "undefined") { let expectedTheme = (this.modeStatus === ModeToggle.DARK_MODE? "dark" : "default"); let config = { theme: expectedTheme }; /* re-render the SVG › <https://github.com/mermaid-js/mermaid/issues/311#issuecomment-332557344> */ $(".mermaid").each(function() { let svgCode = $(this).prev().children().html(); $(this).removeAttr("data-processed"); $(this).html(svgCode); }); mermaid.initialize(config); mermaid.init(undefined, ".mermaid"); } } flipMode() { if (this.hasMode) { if (this.isSysDarkPrefer) { if (this.isLightMode) { this.clearMode(); } else { this.setLight(); } } else { if (this.isDarkMode) { this.clearMode(); } else { this.setDark(); } } } else { if (this.isSysDarkPrefer) { this.setLight(); } else { this.setDark(); } } this.updateMermaid(); } /* flipMode() */ } /* ModeToggle */ let toggle = new ModeToggle(); $(".mode-toggle").click(function() { toggle.flipMode(); }); </script> </span></div></div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/"> 首页 </a> </span> <span>算法导论</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> 文章</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="搜索..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >取消</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="post-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>算法导论</h1><div class="post-meta text-muted d-flex flex-column"><div> <span class="semi-bold"> VCisHere </span> 发表于 <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="2022-06-13, 22:01 +0800" >2022-06-13<i class="unloaded">2022-06-13T22:01:21+08:00</i> </span></div><div> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="906 字">5 分钟 阅读</span></div></div><div class="post-content"><h1 id="算法导论">算法导论</h1><p>插入排序</p><p>堆排序</p><p>快速排序</p><p>随机快速排序</p><p>线性时间内排序：Counting sort（计数排序），Radix sort（基数排序），Bucket sort（桶排序）</p><p>分治三个步骤：</p><ol><li>分解步骤将问题划分为一些子问题，子问题的形式和原问题一样，只是规模更小<li>解决步骤递归地求解出子问题，如果子问题的规模足够小，则停止递归，直接求解<li>合并步骤将子问题的解组合成原问题的解</ol><p>动态规划四个步骤：</p><ol><li>刻画一个最优解的结构特征<li>递归地定义最优解的值<li>计算最优解的值，通常采用自底向上的方法<li>利用计算出的信息构造一个最优解</ol><p>主定理求递归时间复杂度</p>\[T(n)=aT(n/b) + f(n)\]<ol><li> \[if \space f(n)=O(n^{log_{b}{a}-\epsilon})\space for \space some \space constant \space \epsilon&gt;0,then \space T(n)=\Theta(n^{log_{b}{a}})\]<li> \[if \space f(n)=\Theta(n^{log_{b}a}log^{k}n)\space with \space k&gt;=0,then \space T(n)=\Theta(n^{log_{b}a}log^{k+1}n)\]<li>\(if \space f(n)=\Omega(n^{log_{b}{a}+\epsilon})\space with \space \epsilon &gt; 0, and \space f(n) \space satisfies \space the \space condition, then \space T(n)=\Theta(f(n))\) \(Regularity \space condition:af(n/b)&lt;=cf(n)\space for \space some \space constant \space c &lt; 1 \space and \space all \space sufficiently \space large \space n\)</ol><p>Partition算法求第i小，最坏n2</p><p>最大子数组和</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span text-data=" Text "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre>dp[i] 表示以i为最后一项的连续子数组和的最大值
+dp[0] = arr[0]
+dp[i] = max(dp[i - 1] + arr[i], arr[i])
+
+压缩空间：
+for (int i = 0; i &lt; n; i++) {
+	if (sum &lt; 0) {
+		sum = arr[i];
+	} else {
+		sum += arr[i];
+	}
+	ans = max(ans, sum);
+}
+return ans;
+</pre></table></code></div></div><p>装配线调度</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span text-data=" Text "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre>dp1[0] = e1 + a[1][0]
+dp1[i] = min(dp1[i - 1] + a[1][i], dp2[i - 1] + t[2][i - 1] + a[1][i]) (i &gt;= 1)
+dp2[0] = e2 + a[2][0]
+dp2[i] = min(dp2[i - 1] + a[2][i], dp1[i - 1] + t[1][i - 1] + a[2][i]) (i &gt;= 1)
+</pre></table></code></div></div><p>矩阵链乘</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span text-data=" Text "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>dp[i][j]表示i到j之间的矩阵乘法次数
+dp[i][j] = 0 (i == j)
+dp[i][j] = min{dp[i][k] + dp[k + 1][j] + p[i - 1]p[k]p[j]} i &lt;= k &lt;= j (i &lt; j)
+</pre></table></code></div></div><p>最长公共子序列</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span text-data=" Text "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre>dp[i][j]表示x的前i个和y的前j个的最长公共子序列长度
+for (int i = 1; i &lt; len(x) + 1; i++) {
+	for (int j = 1; j &lt; len(y) + 1; j++) {
+        if x[i - 1] == y[j - 1] {
+            dp[i][j] = dp[i - 1][j - 1] + 1;
+        } else {
+            dp[i][j] = max(dp[i - 1][j], dp[i][j - 1];
+        }
+	}
+}
+return dp[len(x)][len(y)];
+</pre></table></code></div></div><p>最长公共子串</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span text-data=" Text "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre>dp[i][j]表示以x的第i个字符为结尾，以y的第j个字符为结尾的最长公共子串长度
+int result = 0;
+for (int i = 1; i &lt; len(x) + 1; i++) {
+	for (int j = 1; j &lt; len(y) + 1; j++) {
+		if (x[i - 1] == y[j - 1]) {
+			dp[i][j] = dp[i - 1][j - 1] + 1;
+		} else {
+			dp[i][j] = 0;
+		}
+		result = max(result, dp[i][j]);
+	}
+}
+return result;
+</pre></table></code></div></div><p>活动选择问题 Activity-selection problem</p><p>贪心：结束时间升序排列，从前往后能选就选</p><p>01背包</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span text-data=" Text "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre><td class="rouge-code"><pre>dp[i][j]表示容量为j装前i个物品的最大价值
+for (int i = 1; i &lt;= weights.size(); i++)
+{
+    for (int j = capacity; j &gt;= weights[i - 1]; j--)
+    {
+    	dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - weights[i - 1]] + values[i - 1]);
+    }
+}
+return dp[weights.size()][capacity];
+
+压缩空间：
+for (int i = 0; i &lt; weights.size(); i++)
+{
+    for (int j = capacity; j &gt;= weights[i]; j--)
+    {
+    	dp[j] = max(dp[j], dp[j - weights[i]] + values[i]);
+    }
+}
+return dp[capacity];
+</pre></table></code></div></div><p>分数背包</p><div class="language-plaintext highlighter-rouge"><div class="code-header"> <span text-data=" Text "><i class="fa-fw fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>value/weight 降序排序
+贪心
+</pre></table></code></div></div><p>dijkstra O(E+VlgV)</p><p>Bellman Ford O(VE)</p><p>Floyd-Warshall</p><p>Johnson’s algorithm 为每个结点找一个值做dijkstra</p><p>LC检索 Least Cost Search</p><p>可计算性：</p><p>不可判定问题Undecidable Problem</p><p>NP完全问题NP-Complete：SAT，3-color，TSP</p></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/'>计算机</a>, <a href='/categories/%E5%9F%BA%E7%A1%80/'>基础</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> 本文由作者按照 <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> 进行授权</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">分享</span> <span class="share-icons"> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="分享链接" title-succeed="链接已复制！"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-lastmod" class="post"> <span>最近更新</span><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1-Percolator/">分布式数据库事务-Percolator</a><li><a href="/posts/RTR5/">Real-Time Rendering 第五章 着色基础（Shading Basics）</a><li><a href="/posts/RTR4/">Real-Time Rendering 第四章 变换（Transforms）</a><li><a href="/posts/RTR1/">Real-Time Rendering 第一章 介绍（Introduction）</a><li><a href="/posts/RTR2/">Real-Time Rendering 第二章 图形渲染流水线（The Graphics Rendering Pipeline）</a></ul></div></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>相关文章</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/"><div class="card-body"> <span class="timeago small" >2022-06-17<i class="unloaded">2022-06-17T16:03:15+08:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>软件体系结构</h3><div class="text-muted small"><p> 软件体系结构 大纲 绪论 软件体系结构风格 数据流体系结构风格 调用/返回体系结构风格 以数据为中心体系结构风格 虚拟机体系结构风格 事件系统体系结构风格 软件体系结构建模和文档化 质量属性及质量属性策略 可用性及其策略 性能及其策略 ...</p></div></div></a></div><div class="card"> <a href="/posts/InnoDB-LRU/"><div class="card-body"> <span class="timeago small" >2022-08-25<i class="unloaded">2022-08-25T16:03:15+08:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>InnoDB-BufferPool-LRU</h3><div class="text-muted small"><p> BufferPool Innodb为了解决磁盘上磁盘速度和CPU速度不一致的问题，在操作磁盘上的数据时，先将数据加载至内存中，在内存中对数据页进行操作。 Mysql在启动的时候，会向内存申请一块连续的空间，这块空间名为Bufffer Pool，也就是缓冲池，默认情况下Buffer Pool只有128M。 简单的LRU： 新数据插入到链表头部； 每当缓存命中（即缓存数据被访问）...</p></div></div></a></div><div class="card"> <a href="/posts/InnoDB-Row-Format/"><div class="card-body"> <span class="timeago small" >2022-08-30<i class="unloaded">2022-08-30T16:03:15+08:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>InnoDB-Row Format</h3><div class="text-muted small"><p> InnoDB 数据记录的存储格式：Row Format 行格式 在 MySQL 中，所谓 Row Format 行格式是指数据记录(或者称之为行)在磁盘中的物理存储方式。具体地，对于 InnoDB 存储引擎而言，常见的行格式类型有 Compact、Redundant、Dynamic 和 Compressed。 Compact 其大体分为两部分：记录的额外信息、记录的数据内容。 ...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/RTR5/" class="btn btn-outline-primary" prompt="上一篇"><p>Real-Time Rendering 第五章 着色基础（Shading Basics）</p></a> <a href="/posts/%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" class="btn btn-outline-primary" prompt="下一篇"><p>软件体系结构</p></a></div></div></div></div><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center"><div class="footer-left"><p class="mb-0"> © 2023 <a href="https://github.com/VCisHere">VCisHere</a>. <span data-toggle="tooltip" data-placement="top" title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。">保留部分权利。</span></p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><h4 class="text-muted mb-4">热门标签</h4></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">搜索结果为空</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> <script> /* see: <https://docs.mathjax.org/en/latest/options/input/tex.html#tex-options> */ MathJax = { tex: { inlineMath: [ ['$', '$'], ['\\(', '\\)'] ], displayMath: [ ['$$', '$$'], ['\\[', '\\]'] ], processEscapes: true } }; </script> <script src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.16.1,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id="></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', ''); }); </script>
