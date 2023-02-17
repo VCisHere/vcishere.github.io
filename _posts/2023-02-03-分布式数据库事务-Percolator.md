@@ -6,5 +6,4 @@ categories: 计算机 DB
 typora-root-url: ..
 ---
 
-![](/assets/file/Percolator.pdf)
-
+[PDF](https://github.com/VCisHere/vcishere.github.io/blob/main/assets/file/Percolator.pdf)
